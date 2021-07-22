@@ -2,7 +2,7 @@
   "packages": 
   [
     {
-       "name": "Hydrogeolog",
+       "name": "hydrogeolog",
        "maintainer": "UQ GEC",
        "help": 
        {
