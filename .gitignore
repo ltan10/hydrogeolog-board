@@ -1,11 +1,14 @@
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+# Compiled Object files
+*.o
+*.obj
+
+# Visual Studio Code
+**/.vscode/
+
+# Executables
+# *.out
+# *.app
+
+# Ignore local overrides of platform.txt and boards.txt,
+/boards.local.txt
+/platform.local.txt
