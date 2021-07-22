@@ -18,9 +18,9 @@
              "online": ""
            },
            "url": "https://github.com/ltan10/hydrogeolog-board/archive/1.0.0.zip?raw=true",
-           "checksum": "SHA-256:F5144B33DFB143C598A0860415DDF3994A7678CF111DB268AC4E30C9104E2BF7",
+           "checksum": "SHA-256:88CAC1532AF20D57972DBFB3D5D71F47FF868153A2141328401C2ABF1D8110B2",
            "archiveFileName": "1.0.0.zip",
-           "size": "3709",
+           "size": "59010",
            "name": "Hydrogeolog AVR Boards",
            "version": "1.0.0",
            "architecture": "avr",
