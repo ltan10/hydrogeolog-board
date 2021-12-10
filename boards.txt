@@ -45,11 +45,17 @@ mega.bootloader.unlock_bits=0x3F
 mega.bootloader.lock_bits=0x0F
 mega.bootloader.extended_fuses=0xFD
 
-# Baudrate - Default
-#mega.menu.bootloader_baud.default=Default
-#mega.menu.bootloader_baud.default.upload.speed=115200
+# Baudrate - 2400
+mega.menu.bootloader_baud.2400baud=2400 (Default)
+mega.menu.bootloader_baud.2400baud.upload.speed=2400
+mega.menu.bootloader_baud.2400baud.bootloader.file=stk500v2/stk500boot_v2_mega2560_2400baud.hex
 
 # Baudrate - 4800
 mega.menu.bootloader_baud.4800baud=4800
 mega.menu.bootloader_baud.4800baud.upload.speed=4800
 mega.menu.bootloader_baud.4800baud.bootloader.file=stk500v2/stk500boot_v2_mega2560_4800baud.hex
+
+# Baudrate - Arduino Default
+mega.menu.bootloader_baud.default=Arduino Mega Default
+mega.menu.bootloader_baud.default.upload.speed=115200
+mega.menu.bootloader_baud.default.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex

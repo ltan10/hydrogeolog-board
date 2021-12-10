@@ -328,9 +328,45 @@ mega2560:	MCU = atmega2560
 mega2560:	F_CPU = 16000000
 mega2560:	BOOTLOADER_ADDRESS = 3E000
 mega2560:	CFLAGS += -D_MEGA_BOARD_
-mega2560:	CFLAGS += -DBAUDRATE=4800 -DUART_BAUDRATE_DOUBLE_SPEED=0
-mega2560:	begin gccversion sizebefore build sizeafter end 
+ifeq ($(shell expr $(baud) \< 115200), 1)
+mega2560:	CFLAGS += -DBAUDRATE=$(baud)
+endif
+# ifeq ($(shell expr $(baud) \<= 115200), 1)
+# mega2560:	CFLAGS += DUART_BAUDRATE_DOUBLE_SPEED=0
+# endif
+mega2560:	begin gccversion sizebefore build sizeafter tidy end 
+ifeq ($(shell expr $(baud) \< 115200), 1)
+	mv $(TARGET).hex stk500boot_v2_mega2560_$(baud)baud.hex
+else
+	mv $(TARGET).hex stk500boot_v2_mega2560.hex
+endif
+
+# mega2560:	MCU = atmega2560
+# mega2560:	F_CPU = 16000000
+# mega2560:	BOOTLOADER_ADDRESS = 3E000
+# mega2560:	CFLAGS += -D_MEGA_BOARD_
+# mega2560:	begin gccversion sizebefore build sizeafter end 
+# 			mv $(TARGET).hex stk500boot_v2_mega2560.hex
+
+
+#	Jul 21,	2021	<MLS> Adding 2560 support, 4800 Baudrate
+mega2560_4800:	MCU = atmega2560
+mega2560_4800:	F_CPU = 16000000
+mega2560_4800:	BOOTLOADER_ADDRESS = 3E000
+mega2560_4800:	CFLAGS += -D_MEGA_BOARD_
+mega2560_4800:	CFLAGS += -DBAUDRATE=4800 -DUART_BAUDRATE_DOUBLE_SPEED=0
+mega2560_4800:	begin gccversion sizebefore build sizeafter tidy end 
 			mv $(TARGET).hex stk500boot_v2_mega2560_4800baud.hex
+
+
+#	Jul 21,	2021	<MLS> Adding 2560 support, 2400 Baudrate
+mega2560_2400:	MCU = atmega2560
+mega2560_2400:	F_CPU = 16000000
+mega2560_2400:	BOOTLOADER_ADDRESS = 3E000
+mega2560_2400:	CFLAGS += -D_MEGA_BOARD_
+mega2560_2400:	CFLAGS += -DBAUDRATE=2400 -DUART_BAUDRATE_DOUBLE_SPEED=0
+mega2560_2400:	begin gccversion sizebefore build sizeafter tidy end 
+			mv $(TARGET).hex stk500boot_v2_mega2560_2400baud.hex
 
 
 ############################################################
